@@ -7,8 +7,7 @@ module.exports = {
   mode: "production",
 
   entry: {
-    index: "./src/assets/js/main.js",
-    check: "./src/assets/js/check.js",
+    index: "./src/assets/js/main.js"
   },
 
   output: {
@@ -71,7 +70,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "[path][name].[ext]",
+              name: "assets/img/[name].[ext]",
             },
           },
         ],
