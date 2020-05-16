@@ -6,8 +6,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   mode: "production",
 
-  entry: {
-    index: "./src/assets/js/main.js"
+  entry: { //Juntar distintos archivos js para una única salida (index.bundle.js)
+    index: [
+      "./src/assets/js/main.js"
+    ],
   },
 
   output: {
