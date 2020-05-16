@@ -8,7 +8,7 @@ module.exports = {
 
   entry: {
     index: "./src/assets/js/main.js",
-    check: "./src/assets/js/check.js"
+    check: "./src/assets/js/check.js",
   },
 
   output: {
@@ -36,15 +36,15 @@ module.exports = {
   module: {
     rules: [
       {
-      test: /\.m?js$/,
-      exclude: /(node_modules|bower_components)/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-env'],
-          plugins: ['@babel/plugin-proposal-object-rest-spread']
-          }
-        }
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+            plugins: ["@babel/plugin-proposal-object-rest-spread"],
+          },
+        },
       },
       {
         test: /\.css$/,
@@ -63,6 +63,17 @@ module.exports = {
           "css-loader",
           // Compiles Sass to CSS
           "sass-loader",
+        ],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[path][name].[ext]",
+            },
+          },
         ],
       },
     ],
